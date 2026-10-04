@@ -123,7 +123,7 @@ export default function Conformal() {
   );
 
   return (
-    <main className="min-h-screen bg-slate-50 px-6 py-12">
+    <main className="min-h-screen grid-paper px-6 py-12">
       <div className="mx-auto max-w-3xl">
         <Link href="/" className="text-sm text-indigo-600">← Back to projects</Link>
         <h1 className="mt-3 text-3xl font-bold text-slate-900">Trustworthy Predictions</h1>

@@ -22,14 +22,54 @@ const projects = [
   },
 ];
 
+function Hero() {
+  const route = "30,170 230,170 230,30 370,30 370,110";
+  return (
+    <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
+      <svg viewBox="0 0 400 200" className="w-full" role="img" aria-label="A route being found through a maze, surrounded by an uncertainty band">
+        <defs>
+          <pattern id="cells" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M20 0H0V20" fill="none" stroke="#e2e8f0" strokeWidth="1" />
+          </pattern>
+        </defs>
+        <rect width="400" height="200" fill="url(#cells)" />
+        <polyline
+          points={route}
+          fill="none"
+          stroke="#6366f1"
+          strokeOpacity="0.2"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          className="pulse-band"
+        />
+        <rect x="160" y="0" width="20" height="140" fill="#1e293b" />
+        <rect x="260" y="60" width="20" height="140" fill="#1e293b" />
+        <polyline
+          points={route}
+          pathLength={1}
+          fill="none"
+          stroke="#fbbf24"
+          strokeWidth="4"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          className="draw-path"
+        />
+        <circle cx="30" cy="170" r="8" fill="#22c55e" />
+        <circle cx="370" cy="110" r="8" fill="#ef4444" />
+      </svg>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50 px-6 py-16">
+    <main className="min-h-screen grid-paper px-6 py-16">
       <div className="mx-auto max-w-3xl">
         <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
           AI / Machine Learning Engineer
         </p>
         <h1 className="mt-2 text-4xl font-bold text-slate-900">Sai Tangirala</h1>
+        <p className="mt-3 text-xl font-medium text-slate-800">Plan the route. Quantify the doubt.</p>
         <p className="mt-4 text-lg text-slate-600">
           I build AI systems and explain them clearly. Instead of reading about my
           projects, try them below. No sign-up and nothing to install.
@@ -37,6 +77,7 @@ export default function Home() {
         <p className="mt-2 text-sm text-slate-500">
           MSc in AI &amp; Machine Learning, Royal Holloway, University of London
         </p>
+        <Hero />
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {projects.map((p) => (

@@ -228,7 +228,7 @@ export default function Pddl() {
   (:goal (at cell-${goal[0]}-${goal[1]})))`;
 
   return (
-    <main className="min-h-screen bg-slate-50 px-6 py-12">
+    <main className="min-h-screen grid-paper px-6 py-12">
       <div className="mx-auto max-w-3xl">
         <a href="/" className="text-sm text-indigo-600">← Back to projects</a>
         <h1 className="mt-3 text-3xl font-bold text-slate-900">Robot Path Planning</h1>
